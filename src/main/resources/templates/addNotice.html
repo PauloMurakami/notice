@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>New Notice</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Add Notice</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/notice/list">List Notice</a>
+			</li>
+		</ul>
+	</nav>
+
+	<form action="#" th:action="@{/notice/saveNew}" th:object="${noticeInput}" method="post">
+		<div class="d-flex justify-content-center" style="margin-top:10px">
+			<input type="text" style="margin:5px" th:field="*{url}" />
+			<button type="submit" class="btn btn-secondary" style="margin:5px" name="addNotice">Add Notice</button>
+		</div>
+	</form>
+</body>
+
+</html>

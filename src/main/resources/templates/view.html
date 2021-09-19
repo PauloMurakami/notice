@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>View Notice</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="/notice">Add Notice</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/notice/list">List Notice</a>
+			</li>
+		</ul>
+	</nav>
+
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">URL:</th>
+			</tr>
+			<tr>
+				<td th:text="${{notice.url}}"></td>
+			</tr>
+			<tr>
+				<th scope="col">Title:</th>
+			</tr>
+			<tr>
+				<td th:text="${{notice.title}}"></td>
+			</tr>
+			<tr>
+				<th scope="col">Caption:</th>
+			</tr>
+			<tr>
+				<td th:text="${{notice.caption}}"></td>
+			</tr>
+			<tr>
+				<th scope="col">Author:</th>
+			</tr>
+			<tr>
+				<td th:text="${{notice.author}}"></td>
+			</tr>
+			<tr>
+				<th scope="col">Date:</th>
+			</tr>
+			<tr>
+				<td th:text="${{notice.datePublish}}"></td>
+			</tr>
+			<tr>
+				<th scope="col">Content:</th>
+			</tr>
+			<tr>
+				<td th:text="${{notice.contents}}"></td>
+			</tr>
+		</thead>
+		<tbody>
+
+
+		</tbody>
+	</table>
+</body>
+
+</html>

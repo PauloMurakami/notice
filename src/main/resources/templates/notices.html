@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>List Notice</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="/notice">Add Notice</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#">List Notice</a>
+			</li>
+		</ul>
+	</nav>
+
+	<form action="#" th:action="@{/notice/search}" method="get">
+		<div class="d-flex justify-content-center" style="margin-top:10px">
+			<input type="text" name="term" style="margin:5px" />
+			<button type="submit" class="btn btn-secondary" style="margin:5px">search</button>
+		</div>
+	</form>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Title</th>
+				<th scope="col">URL</th>
+				<th scope="col">View</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="n : ${notices}">
+				<td th:text="${{n.title}}"></td>
+				<td th:text="${{n.url}}"></td>
+				<td>
+					<form method="get" th:action="@{/notice/view}">
+						<button type="submit" name="url" th:value="${{n.url}}" class="btn btn-secondary">read more</button>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
