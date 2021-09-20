@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -110,8 +111,8 @@ public class NoticeService {
 		return noticeRepository.search(term);
 	}
 
-	public Notice findByUrl(String url) {
+	public Optional<Notice> findById(Long id) {
 		
-		return noticeRepository.view(url);
+		return noticeRepository.findById(id);
 	}
 }

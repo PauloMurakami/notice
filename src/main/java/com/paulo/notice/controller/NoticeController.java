@@ -2,6 +2,7 @@ package com.paulo.notice.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -47,10 +48,10 @@ public class NoticeController {
 		return "notices";
 	}
 	
-	@GetMapping(value = "/notice/view", params = { "url" })
+	@GetMapping(value = "/notice/view", params = { "id" })
 	public String viewNotice(Model model, final HttpServletRequest req) throws IOException {
 
-		Notice notice = noticeService.findByUrl((req.getParameter("url")));
+		Optional<Notice> notice = noticeService.findById(Long.parseLong(req.getParameter("id")));
 		model.addAttribute("notice", notice);
 		return "view";
 	}
